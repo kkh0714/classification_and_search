@@ -1,7 +1,0 @@
-<u>**Search Engine**</u>
-
-The search engine make use of BM25. It is a probabilistic-based ranking function where it has a diminishing return on term frequency. Before applying BM25, we combine `showname` and `description` columns together in `index.py` and apply text pre-processing, e.g. tokenization, stemming, etc. to obtain the corpus for BM25. Then, apply BM25 on the corpus and save the model to `index` folder. Also, a dataframe with `tvmaze_id` and `showname` column is saved in `index` folder as csv file  for `search.py` use. The text pre-processing takes some time. Any search/query will now go through text pre-processing first, then processed by the BM25 model in the `index` folder and return the top 3 searches.
-
-**<u>Reasons</u>** 
-
-BM25 is still having a good performance among the modern search engines. Hence, I choose this model for the search engine. Pre-process of the text is important because it enhances the accuracy of the model where all the text is standardized. The model can more easily match the search text with the corpus and return superior results. Also, it will penalise the term frequency if the same text appears for many times. The returned scores tend to provide a more balanced or fairer result as the term penalty presents. 
